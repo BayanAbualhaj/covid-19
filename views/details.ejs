@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./layout/head.ejs') %>
+
+<body>
+    <%- include('./layout/header.ejs') %>
+    <div>
+       <h1><%=details.country%></h1>
+       <h3>Date: <%= details.date%></h3>
+       <h3>Cases :
+           <ul>
+               <li><%=details.totalConfirmed%></li>
+               <li><%=details.totalDeaths%></li>
+               <li><%=details.totalRecovered%></li>
+           </ul>
+       </h3> 
+    </div>
+
+    <form action="/myRecord/<%=details.id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+
+
+    
+    <%- include('./layout/footer.ejs') %>
+</body>
+</html>

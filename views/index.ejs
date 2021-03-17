@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./layout/head.ejs') %>
+  <body>
+    <%- include('./layout/header.ejs') %>
+    <h1>World Total Statistics</h1>
+    <div>
+      <h2>Total Confirmed: <%= data.TotalConfirmed%></h2>
+    </div>
+    <div><h2>Total Dethes: <%= data.TotalDeaths%></h2></div>
+    <div><h2>Total Recoverd: <%= data.TotalRecovered%></h2></div>
+
+
+    <form action="/getCountryResults" method="GET">
+      <label for="country">Country Name:</label>
+      <input type="text" id="text" name="country">
+      <label for="date">from</label>
+      <input type="date" name="date" id="date" value="date">
+      <label for="todate">to</label>
+      <input type="date" name="todate" id="todate" value="todate">
+
+      <button type="submit">Search</button>
+
+    </form>
+    <%- include('./layout/footer.ejs') %>
+  </body>
+</html>

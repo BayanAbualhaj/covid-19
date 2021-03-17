@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./layout/head.ejs') %>
+
+<body>
+    <%- include('./layout/header.ejs') %>
+        <%if(records.length){%>
+            <%records.forEach(element=>{%>
+
+                <div>
+                    <h1>Country: <%=element.country%></h1>
+                    <h3>Date: <%= element.date%></h3>
+
+                </div>
+                <form action="/myRecord/<%=element.id%>" method="GET">
+                    
+                    <button type="submit"> View Details</button>
+                
+                </form>
+                
+            
+            <%})%>
+        
+        
+        <%}else{%>
+            <p>NO AVAILABLE RECORDS</p>
+        <%}%>
+
+    <%- include('./layout/footer.ejs') %>
+
+    
+</body>
+</html>

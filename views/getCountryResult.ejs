@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./layout/head.ejs') %>
+
+<body>
+    <%- include('./layout/header.ejs') %>
+    <%results.forEach(element=>{%>
+        <div>
+            <h1>Country: <%=element.Country%></h1>
+            <h3>Date: <%= element.Date%></h3>
+            <h3>Cases: <%= element.Cases%></h3>
+        </div>
+        
+    
+    
+    <%})%>
+
+
+    <%- include('./layout/footer.ejs') %>
+
+</body>
+</html>

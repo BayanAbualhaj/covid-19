@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS cases;
+
+CREATE TABLE cases(
+    id SERIAL PRIMARY KEY NOT NULL,
+    country VARCHAR(255) NOT NULL,
+    totalConfirmed VARCHAR(255) NOT NULL,
+    totalDeaths VARCHAR(255) NOT NULL,
+    totalRecovered VARCHAR(255) NOT NULL,
+    date VARCHAR(255) NOT NULL
+);
