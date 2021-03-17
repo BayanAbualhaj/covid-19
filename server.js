@@ -121,7 +121,7 @@ function handleAddToMyRecord(req,res){
   let totalRecovered=body.totalRecovered;
   let date=body.date;
   
-  let insertQuery= 'INSERT INTO cases(country,totalConfirmed,totalDeaths,totalRecovered,date) VALUES ($1,$2,$3,$4,$5) RETURNING *'
+  let insertQuery= 'INSERT INTO cases(country,totalconfirmed,totaldeaths,totalrecovered,date) VALUES ($1,$2,$3,$4,$5) RETURNING *'
 
   let safeValues=[country,totalConfirmed,totalDeaths,totalRecovered,date];
 
