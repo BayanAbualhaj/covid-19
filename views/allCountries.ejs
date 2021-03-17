@@ -5,7 +5,7 @@
 <body>
     <%- include('./layout/header.ejs') %>
 
-    <%data.forEach(element=>{%>
+    <%contriesDisplay.forEach(element=>{%>
         <div>
             <h1>Country: <%= element.country%></h1>
             <h3>Date: <%= element.date%></h3>
@@ -25,7 +25,7 @@
 
             <input type="text" name="totalRecovered" value="<%=element.totalRecovered%>" hidden>
             <input type="text" name="date" value="<%=element.date%>" hidden>
-            <button type="submit0">Add To My Recored</button>
+            <button type="submit">Add To My Record</button>
 
         </form>
         

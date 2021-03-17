@@ -106,7 +106,7 @@ function  handleAllCountries(req,res){
       arrayOfcountries.push(newCountries);
       console.log(arrayOfcountries);
 
-      res.render('allCountries',{data:arrayOfcountries});
+      res.render('allCountries',{contriesDisplay:arrayOfcountries});
     });
   }).catch(error=>{
     console.log('an error happened :',error);
@@ -121,7 +121,7 @@ function handleAddToMyRecord(req,res){
   let totalRecovered=body.totalRecovered;
   let date=body.date;
   
-  let insertQuery= 'INSERT INTO cases(country,totalconfirmed,totaldeaths,totalrecovered,date) VALUES ($1,$2,$3,$4,$5) RETURNING *'
+  let insertQuery= 'INSERT INTO cases(country,totalconfirmed,totaldeaths,totalrecovered,date) VALUES ($1,$2,$3,$4,$5) RETURNING *;';
 
   let safeValues=[country,totalConfirmed,totalDeaths,totalRecovered,date];
 
@@ -185,5 +185,5 @@ client.connect().then(() => {
       console.log('listening on port ', PORT);
     });
   }).catch((error) => {
-    res.status(500).render('pages/error');
+    console.log('an error happened :',error);
   });
